@@ -353,3 +353,4 @@ button, input { font: inherit; color: inherit; }
 .more__title svg { flex: none; }
 .more__mail { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px; }
 .pick { border-radius: var(--rad-32); }
+.more__title { gap: 2px; }
