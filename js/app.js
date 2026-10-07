@@ -11,6 +11,7 @@
   const fresh = () => ({ scenario: null, region: null, regionName: '', answers: {}, queue: [], current: null, busy: false,
     started: false, tries: 0, showContact: false, feedback: null, run: 0 });
   let S = fresh();
+  let pending = null, focusInput = false; // старт сценария с лендинга
 
   /* ---------- Роутинг ---------- */
   function route() {
@@ -18,7 +19,12 @@
     let name = h === 'chat' ? 'chat' : h === 'result' ? 'result' : 'landing';
     if (name === 'result' && !S.scenario) { location.replace('#chat'); return; }
     Object.entries(screens).forEach(([k, el]) => { el.hidden = k !== name; });
-    if (name === 'chat') { if (!log.children.length) greet(); scrollChat(); }
+    if (name === 'chat') {
+      if (!log.children.length) greet();
+      if (pending) { const p = pending; pending = null; start(p.text, p.scenario); }
+      if (focusInput) { focusInput = false; input.focus(); }
+      scrollChat();
+    }
     if (name === 'result') { renderResult(); window.scrollTo(0, 0); }
     if (name === 'landing' && !h) window.scrollTo(0, 0);
   }
@@ -35,6 +41,17 @@
   document.addEventListener('click', (e) => {
     const stub = e.target.closest('[data-stub]');
     if (stub) { e.preventDefault(); toast('В прототипе: ' + stub.dataset.stub); }
+  });
+
+  /* ---------- Лендинг: вход в помощника ---------- */
+  screens.landing.addEventListener('click', (e) => {
+    if (e.target.closest('[data-focus-input]')) { focusInput = true; return; }
+    const tile = e.target.closest('[data-scn]');
+    if (!tile) return;
+    const id = tile.dataset.scn || null;
+    resetChat();
+    pending = { scenario: id, text: id ? SCENARIOS[id].example : 'Нашёл дикое животное, не знаю, что делать' };
+    location.hash = '#chat';
   });
 
   /* ---------- Лендинг: липкая кнопка и точки карусели ---------- */

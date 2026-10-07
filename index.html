@@ -13,24 +13,78 @@
   <!-- ============ ЛЕНДИНГ ============ -->
   <main class="screen screen--landing" id="screen-landing">
 
+    <!-- 1. Главное действие: начать разбор ситуации прямо с первого экрана -->
     <section class="hero">
       <div class="hero__media ph ph--dark" aria-hidden="true"><span>Иллюстрация</span></div>
       <header class="hero__header">
         <div class="logos"><span class="logos__item">Avito</span><span class="logos__x">×</span><span class="logos__item">РБО</span></div>
-        <button class="icon-btn icon-btn--round" type="button" data-stub="Меню" aria-label="Меню">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
-        </button>
+        <a class="pill" href="#help-ways">Поддержать РБО</a>
       </header>
       <div class="hero__text">
         <h1 class="t-hero">Нашли дикое животное?</h1>
-        <p class="t-lead">Подскажем, нужна ли ему помощь, чего точно не делать и кому написать рядом. Займёт 1–2 минуты</p>
+        <p class="t-lead">Расскажите, что случилось. За 1–2 минуты подскажем, нужна ли помощь, чего не делать и кому написать рядом</p>
       </div>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#chat" data-start-chat>Получить помощь</a>
-        <a class="btn btn--overlay" href="#help-ways">Поддержать РБО</a>
-        <p class="hero__note">Есть угроза для людей? Звоните 112</p>
+      <div class="start">
+        <a class="ask" href="#chat" data-focus-input>Опишите, что произошло</a>
+        <a class="btn btn--primary" href="#chat" data-focus-input>Получить помощь</a>
+        <p class="start__or">или сразу выберите, кого нашли</p>
+        <div class="tiles">
+          <button class="tile" type="button" data-scn="fledgling"><span class="ph tile__ph"></span>Птенец на земле</button>
+          <button class="tile" type="button" data-scn="injuredBird"><span class="ph tile__ph"></span>Раненая птица</button>
+          <button class="tile" type="button" data-scn="moose"><span class="ph tile__ph"></span>Лосёнок, оленёнок</button>
+          <button class="tile" type="button" data-scn=""><span class="ph tile__ph"></span>Другое животное</button>
+        </div>
       </div>
     </section>
+
+    <!-- 2. Правила сразу: работают, даже если человек не пойдёт в помощника -->
+    <section class="block">
+      <h2 class="t-h1">Пока разбираемся — три правила</h2>
+      <p class="t-body mt-8">Не всегда найденного зайчонка, птенца или другого дикого животного нужно забирать из природы. Иногда родители находятся рядом, а вмешательство человека может, наоборот, навредить.</p>
+      <ol class="rules">
+        <li><b>Не подходите близко и не трогайте</b><span>Особенно крупных животных и хищников</span></li>
+        <li><b>Не кормите и не поите</b><span>Неподходящая еда может убить</span></li>
+        <li><b>Не забирайте домой</b><span>Сначала спросите специалиста</span></li>
+      </ol>
+      <div class="alert">Животное на дороге, ведёт себя агрессивно или есть угроза людям? Отойдите и звоните <b>112</b></div>
+    </section>
+
+    <!-- 3. Контакты специалистов: подняты наверх и превращены в действия -->
+    <section class="block" id="contacts">
+      <h2 class="t-h1">Нужен специалист прямо сейчас?</h2>
+      <p class="t-body mt-8">Линии Российского биологического общества. Специалисты часто заняты с животными и могут ответить не сразу — тогда напишите им</p>
+      <div class="lines">
+        <div class="line">
+          <div class="line__text"><b>Птицы</b><span>+7 (999) 828-94-62</span></div>
+          <div class="line__actions">
+            <button class="btn btn--dark btn--s" type="button" data-stub="звонок на +7 (999) 828-94-62">Позвонить</button>
+            <button class="btn btn--secondary btn--s" type="button" data-stub="откроется мессенджер линии">Написать</button>
+          </div>
+        </div>
+        <div class="line">
+          <div class="line__text"><b>Копытные и крупные млекопитающие</b><span>+7 (916) 602-39-60</span></div>
+          <div class="line__actions">
+            <button class="btn btn--dark btn--s" type="button" data-stub="звонок на +7 (916) 602-39-60">Позвонить</button>
+            <button class="btn btn--secondary btn--s" type="button" data-stub="откроется мессенджер линии">Написать</button>
+          </div>
+        </div>
+        <div class="line">
+          <div class="line__text"><b>Зайцы и мелкие млекопитающие</b><span>+7 (925) 841-04-61</span></div>
+          <div class="line__actions">
+            <button class="btn btn--dark btn--s" type="button" data-stub="звонок на +7 (925) 841-04-61">Позвонить</button>
+            <button class="btn btn--secondary btn--s" type="button" data-stub="откроется мессенджер линии">Написать</button>
+          </div>
+        </div>
+      </div>
+      <div class="hint">
+        <p class="t-dense">Не знаете, кому звонить, или вы в другом регионе?</p>
+        <p class="t-small mt-6">Помощник подберёт центр рядом с вами и подскажет, что отправить специалисту</p>
+        <a class="btn btn--primary btn--s mt-12" href="#chat" data-focus-input>Подобрать специалиста</a>
+      </div>
+      <p class="t-small mt-16">Ещё есть <a href="https://wildisle.tb.ru/page3" target="_blank" rel="noopener">инструкции для разных видов животных</a> и почта для вопросов: <a href="mailto:info-rbo@yandex.ru">info-rbo@yandex.ru</a></p>
+    </section>
+
+    <div class="divider"><span>О проекте</span></div>
 
     <section class="block">
       <h2 class="t-h1">Российское биологическое общество</h2>
@@ -130,28 +184,13 @@
       <div class="outro__media ph ph--dark" aria-hidden="true"><span>Иллюстрация</span></div>
       <div class="outro__body">
         <h2 class="t-h1">Увидели дикое животное, которому, кажется, нужна помощь?</h2>
-        <p class="t-body mt-16">Не всегда найденного зайчонка, птенца или другого дикого животного нужно забирать из природы. Иногда родители находятся рядом, а вмешательство человека может, наоборот, навредить.</p>
-        <p class="t-body mt-12">Если вы сомневаетесь, спросите помощника, изучите <a href="https://wildisle.tb.ru/page3" target="_blank" rel="noopener">инструкции для разных видов животных</a> или обратитесь за консультацией к специалистам. Почта для вопросов и обратной связи: <a href="mailto:info-rbo@yandex.ru">info-rbo@yandex.ru</a></p>
-        <a class="btn btn--primary mt-24" href="#chat" data-start-chat>Получить помощь</a>
-        <div class="banners mt-40">
-          <div class="banner">
-            <h3 class="t-h2">Копытные и крупные млекопитающие</h3>
-            <p class="t-body mt-6">+7 (916)-602-39-60</p>
-          </div>
-          <div class="banner">
-            <h3 class="t-h2">Птицы</h3>
-            <p class="t-body mt-6">+7 (999)-828-94-62</p>
-          </div>
-          <div class="banner">
-            <h3 class="t-h2">Зайцы и мелкие млекопитающие</h3>
-            <p class="t-body mt-6">+7 (925)-841-04-61</p>
-          </div>
-        </div>
+        <p class="t-body mt-16">Расскажите помощнику, что случилось: он подскажет первые шаги и даст контакт специалиста рядом.</p>
+        <a class="btn btn--primary mt-24" href="#chat" data-focus-input>Получить помощь</a>
       </div>
     </section>
 
     <div class="sticky-cta" id="sticky-cta" hidden>
-      <a class="btn btn--primary" href="#chat" data-start-chat>Нашли дикое животное? Получить помощь</a>
+      <a class="btn btn--primary" href="#chat" data-focus-input>Нашли дикое животное? Получить помощь</a>
     </div>
   </main>
 
