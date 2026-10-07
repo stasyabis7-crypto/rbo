@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>РБО × Авито — помощник по диким животным (прототип)</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ ЛЕНДИНГ ============ -->
+  <main class="screen screen--landing" id="screen-landing">
+
+    <section class="hero">
+      <div class="hero__media ph ph--dark" aria-hidden="true"><span>Иллюстрация</span></div>
+      <header class="hero__header">
+        <div class="logos"><span class="logos__item">Avito</span><span class="logos__x">×</span><span class="logos__item">РБО</span></div>
+        <button class="icon-btn icon-btn--round" type="button" data-stub="Меню" aria-label="Меню">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+        </button>
+      </header>
+      <div class="hero__text">
+        <h1 class="t-hero">Нашли дикое животное?</h1>
+        <p class="t-lead">Подскажем, нужна ли ему помощь, чего точно не делать и кому написать рядом. Займёт 1–2 минуты</p>
+      </div>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#chat" data-start-chat>Получить помощь</a>
+        <a class="btn btn--overlay" href="#help-ways">Поддержать РБО</a>
+        <p class="hero__note">Есть угроза для людей? Звоните 112</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="t-h1">Российское биологическое общество</h2>
+      <p class="t-body mt-8">Это некоммерческая организация, которая объединяет специалистов в области биологии, ветеринарии, зоотехнии, экологии, педагогики и права, а также опытных волонтёров и людей, которым небезразлична судьба животных</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="ph ph--16x9"><b>54</b></div>
+          <h3 class="t-h3">Региона России</h3>
+          <p class="t-body">Охвачены работой по спасению и реабилитации диких животных</p>
+        </div>
+        <div class="stat">
+          <div class="ph ph--16x9"><b>136</b></div>
+          <h3 class="t-h3">Животных и птиц</h3>
+          <p class="t-body">Получают заботу и проходят реабилитацию прямо сейчас</p>
+        </div>
+        <div class="stat">
+          <div class="ph ph--16x9"><b>4095</b></div>
+          <h3 class="t-h3">Волонтёров</h3>
+          <p class="t-body">Объединились вокруг общества, помогая животным по всей стране</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="t-h1">Совместные проекты</h2>
+      <p class="t-body mt-8">Помощь диким животным держится не только на специалистах и волонтёрах. За каждым спасением стоит инфраструктура: транспорт, помещения, корм, оборудование и люди, готовые быстро приехать туда, где нужна помощь.</p>
+      <div class="carousel" id="projects">
+        <article class="carousel__item">
+          <div class="ph ph--card"><span>Фото проекта</span></div>
+          <h3 class="t-h2">Дикий остров</h3>
+          <p class="t-body mt-8">Реабилитационный центр РБО принимает травмированных, ослабленных и осиротевших диких животных и готовит их к возвращению в природу, следуя принципу, что дикий зверь должен оставаться диким</p>
+        </article>
+        <article class="carousel__item">
+          <div class="ph ph--card"><span>Фото проекта</span></div>
+          <h3 class="t-h2">Дикий остров</h3>
+          <p class="t-body mt-8">Реабилитационный центр РБО принимает травмированных, ослабленных и осиротевших диких животных и готовит их к возвращению в природу, следуя принципу, что дикий зверь должен оставаться диким</p>
+        </article>
+        <article class="carousel__item">
+          <div class="ph ph--card"><span>Фото проекта</span></div>
+          <h3 class="t-h2">Дикий остров</h3>
+          <p class="t-body mt-8">Реабилитационный центр РБО принимает травмированных, ослабленных и осиротевших диких животных и готовит их к возвращению в природу, следуя принципу, что дикий зверь должен оставаться диким</p>
+        </article>
+      </div>
+      <div class="dots" id="projects-dots"><i class="is-on"></i><i></i><i></i></div>
+    </section>
+
+    <section class="block">
+      <h2 class="t-h1">Наш вклад</h2>
+      <div class="banners">
+        <div class="banner">
+          <h3 class="t-h2">Помощь «Дикому острову»</h3>
+          <p class="t-body mt-6">Авито помог «Дикому острову» построить стационар для лечения и выхаживания животных, а сейчас передаёт корм и необходимые вещи и отправляет сотрудников в волонтёрские выезды</p>
+        </div>
+        <div class="banner">
+          <h3 class="t-h2">Помощь «Дому зайца»</h3>
+          <p class="t-body mt-6">Авито передаёт «Дому зайца» корм и вещи, необходимые животным каждый день, а сотрудники компании работают волонтёрами и подключаются, когда нужна срочная помощь</p>
+        </div>
+        <div class="banner">
+          <h3 class="t-h2">Помощь с транспортом</h3>
+          <p class="t-body mt-6">В 2026 году Авито также приобрёл для Российского биологического общества автомобиль через <a class="link-muted" href="https://www.avito.ru/all/auto_select" target="_blank" rel="noopener">сервис Авито Авто «Селект»</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="help-ways">
+      <h2 class="t-h1">Как можно помочь</h2>
+      <p class="t-body mt-8">Помочь проектам Российского биологического общества может каждый</p>
+      <div class="ways">
+        <div class="way">
+          <div class="ph ph--square"><span>Иконка</span></div>
+          <h3 class="t-h2">Помочь финансово</h3>
+          <p class="t-body mt-6">Пожертвовать можно прямо на Авито, разовым платежом на любую сумму. Деньги идут на содержание и реабилитацию животных.</p>
+          <button class="btn btn--primary" type="button" data-stub="Переход к пожертвованию на Авито">Помочь</button>
+        </div>
+        <div class="way">
+          <div class="ph ph--square"><span>Иконка</span></div>
+          <h3 class="t-h2">Стать волонтёром</h3>
+          <p class="t-body mt-6">У РБО более 4 400 волонтёров по всей России. Можно присоединиться к команде и помогать в проектах организации</p>
+          <button class="btn btn--secondary" type="button" data-stub="Анкета волонтёра">Присоединиться</button>
+        </div>
+        <div class="way">
+          <div class="ph ph--square"><span>Иконка</span></div>
+          <h3 class="t-h2">Передать вещи</h3>
+          <p class="t-body mt-6">Реабилитационным центрам постоянно нужны расходные материалы, оборудование, корм и другие вещи для содержания животных</p>
+          <button class="btn btn--secondary" type="button" data-stub="Список нужных вещей">Передать</button>
+        </div>
+        <div class="way">
+          <div class="ph ph--square"><span>Иконка</span></div>
+          <h3 class="t-h2">Рассказывать о проектах</h3>
+          <p class="t-body mt-6">Чем больше людей знают, как правильно помогать диким животным, тем выше шанс, что животное получит действительно необходимую помощь</p>
+          <button class="btn btn--secondary" type="button" data-stub="Системное окно «Поделиться»">Поделиться</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="outro">
+      <div class="outro__media ph ph--dark" aria-hidden="true"><span>Иллюстрация</span></div>
+      <div class="outro__body">
+        <h2 class="t-h1">Увидели дикое животное, которому, кажется, нужна помощь?</h2>
+        <p class="t-body mt-16">Не всегда найденного зайчонка, птенца или другого дикого животного нужно забирать из природы. Иногда родители находятся рядом, а вмешательство человека может, наоборот, навредить.</p>
+        <p class="t-body mt-12">Если вы сомневаетесь, спросите помощника, изучите <a href="https://wildisle.tb.ru/page3" target="_blank" rel="noopener">инструкции для разных видов животных</a> или обратитесь за консультацией к специалистам. Почта для вопросов и обратной связи: <a href="mailto:info-rbo@yandex.ru">info-rbo@yandex.ru</a></p>
+        <a class="btn btn--primary mt-24" href="#chat" data-start-chat>Получить помощь</a>
+        <div class="banners mt-40">
+          <div class="banner">
+            <h3 class="t-h2">Копытные и крупные млекопитающие</h3>
+            <p class="t-body mt-6">+7 (916)-602-39-60</p>
+          </div>
+          <div class="banner">
+            <h3 class="t-h2">Птицы</h3>
+            <p class="t-body mt-6">+7 (999)-828-94-62</p>
+          </div>
+          <div class="banner">
+            <h3 class="t-h2">Зайцы и мелкие млекопитающие</h3>
+            <p class="t-body mt-6">+7 (925)-841-04-61</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sticky-cta" id="sticky-cta" hidden>
+      <a class="btn btn--primary" href="#chat" data-start-chat>Нашли дикое животное? Получить помощь</a>
+    </div>
+  </main>
+
+  <!-- ============ ПОМОЩНИК ============ -->
+  <section class="screen screen--chat" id="screen-chat" hidden>
+    <header class="bar">
+      <a class="icon-btn" href="#" aria-label="Назад на лендинг">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>
+      </a>
+      <div class="bar__title">
+        <b>Помощник по диким животным</b>
+        <span>По инструкциям РБО</span>
+      </div>
+      <button class="icon-btn" type="button" id="open-sheet" aria-label="Сценарии прототипа">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.8M12 17h.01"/></svg>
+      </button>
+    </header>
+
+    <div class="chat" id="chat-scroll">
+      <div class="chat__log" id="chat-log" aria-live="polite"></div>
+    </div>
+
+    <div class="composer">
+      <div class="chips" id="chips"></div>
+      <form class="composer__row" id="chat-form" autocomplete="off">
+        <input class="input" id="chat-input" type="text" placeholder="Опишите, что произошло" aria-label="Опишите, что произошло" enterkeyhint="send">
+        <button class="icon-btn icon-btn--send" type="submit" aria-label="Отправить">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.4 20.4 21.8 12 3.4 3.6 3.4 10l12 2-12 2z"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ РЕЗУЛЬТАТ ============ -->
+  <section class="screen screen--result" id="screen-result" hidden>
+    <header class="bar">
+      <a class="icon-btn" href="#chat" aria-label="Назад в чат">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>
+      </a>
+      <div class="bar__title"><b>Что делать</b><span id="result-context"></span></div>
+      <span class="icon-btn" aria-hidden="true"></span>
+    </header>
+    <div class="result" id="result-body"></div>
+  </section>
+
+  <!-- Меню прототипа: быстрый переход к сценариям -->
+  <div class="sheet" id="sheet" hidden>
+    <div class="sheet__backdrop" data-close-sheet></div>
+    <div class="sheet__panel" role="dialog" aria-label="Сценарии прототипа">
+      <p class="t-caption">Меню прототипа · не часть продукта</p>
+      <h3 class="t-h3 mt-6">Перейти к сценарию</h3>
+      <div class="sheet__list" id="sheet-list"></div>
+      <button class="btn btn--secondary" type="button" data-close-sheet>Закрыть</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
