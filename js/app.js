@@ -43,6 +43,19 @@
     if (stub) { e.preventDefault(); toast('В прототипе: ' + stub.dataset.stub); }
   });
 
+  /* ---------- Типографика: без висячих предлогов, союзов и частиц ---------- */
+  const SHORT = 'в|во|на|с|со|к|ко|у|о|об|обо|от|ото|до|из|изо|за|по|под|над|при|про|для|без|через|перед|между|и|а|но|да|или|либо|что|чтобы|как|если|то|не|ни|же|ведь|вот|даже|уже|лишь|это';
+  const reLead = new RegExp(`(?<=^|[\\s(«„\\u00A0])(${SHORT})[ \\t\\n]+`, 'gi');
+  const reTail = /[ \t\n]+(же|ли|ль|бы|б|ж)(?=[\s.,!?:;»)]|$)/gi;
+  function typograph(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (!n.nodeValue.trim()) continue;
+      n.nodeValue = n.nodeValue.replace(reLead, '$1 ').replace(reTail, ' $1').replace(/[ \t\n]+—/g, ' —');
+    }
+  }
+  typograph(screens.landing);
+
   /* ---------- Лендинг: вход в помощника ---------- */
   screens.landing.addEventListener('click', (e) => {
     if (e.target.closest('[data-focus-input]')) { focusInput = true; return; }
