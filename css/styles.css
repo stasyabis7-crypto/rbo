@@ -349,3 +349,6 @@ button, input { font: inherit; color: inherit; }
 .more__text { display: flex; flex-direction: column; gap: 4px; padding: 20px 0 20px 24px; min-width: 0; }
 .more__text span { overflow-wrap: anywhere; }
 .more__item img { flex: none; align-self: flex-end; height: 112px; width: auto; display: block; }
+.more__title { display: inline-flex; align-items: center; gap: 6px; }
+.more__title svg { flex: none; }
+.more__mail { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 2px; }
