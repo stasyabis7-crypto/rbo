@@ -321,3 +321,17 @@ button, input { font: inherit; color: inherit; }
 .alert .t-body { margin-top: 4px; }
 .btn--danger { position: relative; z-index: 1; width: auto; margin-top: 14px; padding: 14px 20px; background: #ff4053; color: #fff; }
 .alert__img { position: absolute; right: 0; bottom: 0; width: 120px; height: auto; }
+
+/* ---------- Контакты v2: слайдер серых баннеров с картинкой сверху ---------- */
+.lines { display: flex; flex-direction: row; gap: 10px; margin: 24px calc(-1 * var(--gutter)) 0; padding: 0 10px; overflow-x: auto;
+  scroll-snap-type: x mandatory; scroll-padding-left: 10px; scrollbar-width: none; }
+.lines::-webkit-scrollbar { display: none; }
+.line { flex: 0 0 min(320px, 84%); scroll-snap-align: start; display: flex; flex-direction: column; gap: 0; padding: 0; border: 0; border-radius: 20px;
+  background: var(--bg-default); overflow: hidden; }
+.line__img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; }
+.line__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; padding: 20px 24px 34px; }
+.line__body .t-body { margin-top: 4px; }
+.line__actions { display: flex; gap: 6px; margin-top: auto; padding-top: 14px; }
+.line__actions .btn { width: auto; padding: 14px 20px; white-space: nowrap; }
+.hint { margin-top: 10px; }
+@media (min-width: 560px) { .lines { display: flex; } }
