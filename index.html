@@ -15,25 +15,31 @@
 
     <!-- 1. Главное действие: начать разбор ситуации прямо с первого экрана -->
     <section class="hero">
-      <div class="hero__media ph ph--dark" aria-hidden="true"><span>Иллюстрация</span></div>
       <header class="hero__header">
-        <div class="logos"><span class="logos__item">Avito</span><span class="logos__x">×</span><span class="logos__item">РБО</span></div>
+        <div class="logos">
+          <img class="logos__avito" src="img/logo-avito.svg" alt="Авито">
+          <span class="logos__x">×</span>
+          <img class="logos__rbo" src="img/logo-rbo.png" alt="НКО РБО">
+        </div>
         <a class="pill" href="#help-ways">Поддержать РБО</a>
       </header>
       <div class="hero__text">
         <h1 class="t-hero">Нашли дикое животное?</h1>
         <p class="t-lead">Расскажите, что случилось. За 1–2 минуты подскажем, нужна ли помощь, чего не делать и кому написать рядом</p>
       </div>
-      <div class="start">
-        <a class="ask" href="#chat" data-focus-input>Опишите, что произошло</a>
+      <div class="hero__actions">
         <a class="btn btn--primary" href="#chat" data-focus-input>Получить помощь</a>
-        <p class="start__or">или сразу выберите, кого нашли</p>
-        <div class="tiles">
-          <button class="tile" type="button" data-scn="fledgling"><span class="ph tile__ph"></span>Птенец на земле</button>
-          <button class="tile" type="button" data-scn="injuredBird"><span class="ph tile__ph"></span>Раненая птица</button>
-          <button class="tile" type="button" data-scn="moose"><span class="ph tile__ph"></span>Лосёнок, оленёнок</button>
-          <button class="tile" type="button" data-scn=""><span class="ph tile__ph"></span>Другое животное</button>
-        </div>
+      </div>
+    </section>
+
+    <!-- Быстрый выбор животного: сразу запускает сценарий в помощнике -->
+    <section class="block">
+      <h2 class="t-h1">Вы можете сразу выбрать, кого нашли</h2>
+      <div class="tiles">
+        <button class="tile" type="button" data-scn="fledgling"><img class="tile__img" src="img/tile-1.png" alt="">Птенец на земле</button>
+        <button class="tile" type="button" data-scn="injuredBird"><img class="tile__img" src="img/tile-2.png" alt="">Раненая птица</button>
+        <button class="tile" type="button" data-scn="moose"><img class="tile__img" src="img/tile-3.png" alt="">Лосёнок, оленёнок</button>
+        <button class="tile" type="button" data-scn=""><img class="tile__img" src="img/tile-4.png" alt="">Другое животное</button>
       </div>
     </section>
 

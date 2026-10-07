@@ -281,3 +281,20 @@ button, input { font: inherit; color: inherit; }
 .outro__body { padding: 56px var(--gutter) 120px; }
 @media (min-width: 560px) { .tiles { grid-template-columns: repeat(4, 1fr); } .lines { display: grid; grid-template-columns: repeat(3, 1fr); } .line__actions { grid-template-columns: 1fr; } }
 .hero__media span { display: none; }
+
+/* ---------- Первый баннер v3: фон-картинка, чёрный текст, кнопка у низа ---------- */
+.hero { height: 700px; min-height: 0; color: var(--text); background: #d3ecff url("../img/hero.png") center / cover no-repeat; }
+.hero__header { padding: 12px var(--gutter) 8px; }
+.logos { gap: 6px; }
+.logos__avito { height: 40px; width: auto; display: block; }
+.logos__rbo { height: 56px; width: auto; display: block; }
+.logos__x { color: var(--text); font: 500 18px/1 var(--font); }
+.pill { background: rgba(255,255,255,.7); border-color: transparent; color: var(--text); }
+.hero__text { flex: 1; justify-content: flex-end; padding: 0 var(--gutter) 16px; text-align: left; }
+.hero__actions { padding: 0 var(--gutter) 28px; }
+.tiles { margin-top: 24px; }
+.tile { border: 0; background: var(--bg-default); min-height: 72px; padding: 8px 12px 8px 8px; font: 500 15px/20px var(--font); }
+.tile:active { background: #e8e7e5; }
+.tile__img { flex: none; width: 56px; height: 56px; border-radius: 12px; object-fit: cover; }
+@media (min-width: 560px) { .tiles { grid-template-columns: 1fr 1fr; } }
+.logos__rbo { height: 68px; margin: -6px 0 -6px -6px; }
