@@ -355,3 +355,4 @@ button, input { font: inherit; color: inherit; }
 .pick { border-radius: var(--rad-32); }
 .more__title { gap: 2px; }
 .more__title svg { transform: translateY(2px); } /* центр стрелки — по середине строчных букв */
+.more__mail { display: block; }
