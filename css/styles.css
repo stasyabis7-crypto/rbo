@@ -335,3 +335,7 @@ button, input { font: inherit; color: inherit; }
 .line__actions .btn { width: auto; padding: 14px 20px; white-space: nowrap; }
 .hint { margin-top: 10px; }
 @media (min-width: 560px) { .lines { display: flex; } }
+/* Крестик на равном расстоянии (14px) от видимых краёв логотипов: учтены пустые поля внутри файлов */
+.logos { gap: 0; }
+.logos__avito { margin: 0 -5px 0 -15px; }
+.logos__rbo { margin: -10px 0 -10px 3px; }
