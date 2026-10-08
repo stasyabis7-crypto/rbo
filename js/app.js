@@ -234,7 +234,7 @@
 
   /* ---------- Результат ---------- */
   // Ситуации, которые используют картинки другой ситуации
-  const PIC_ALIAS = { 'moose-danger': 'bird-contact', 'other-contact': 'bird-contact' };
+  const PIC_ALIAS = { 'moose-danger': 'fledgling-unsure', 'other-contact': 'fledgling-unsure' };
   const picKey = (k) => PIC_ALIAS[k] || k;
 
   function buildResult() {
