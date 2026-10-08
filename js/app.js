@@ -316,11 +316,8 @@
         ${S.feedback === 'useful' ? '<a class="btn btn--overlay" href="#help-ways">Поддержать РБО</a>' : ''}</div>`;
     }
     if (!contactShown) {
-      return `<div class="feedback"><h3 class="t-h3">Ответ был полезен?</h3><img class="feedback__pic" src="img/feedback.png" alt="">
-        <div class="feedback__row">
-          <button class="btn btn--s btn--dark" type="button" data-act="fb-useful">Да</button>
-          <button class="btn btn--s" type="button" data-act="fb-useless">Нет</button>
-        </div></div>`;
+      return `<div class="feedback"><h3 class="t-h3">Вы можете обратиться в центр и задать вопросы</h3><img class="feedback__pic" src="img/feedback.png" alt="">
+        <button class="btn btn--dark" type="button" data-act="show-contact">Связаться со специалистом</button></div>`;
     }
     return `<div class="feedback"><h3 class="t-h3">Получилось связаться?</h3><img class="feedback__pic" src="img/feedback.png" alt="">
       <div class="feedback__row">
