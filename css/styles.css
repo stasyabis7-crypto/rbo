@@ -378,3 +378,4 @@ button, input { font: inherit; color: inherit; }
 .tile { gap: 16px; align-items: center; } .tile__text { flex: 1; min-width: 0; overflow-wrap: anywhere; } .tile__arrow { flex: none; }
 #lines-dots { margin-top: 16px; }
 .more { margin-left: calc(10px - var(--gutter)); margin-right: calc(10px - var(--gutter)); }
+.stat__img { display: block; width: 100%; height: auto; border-radius: var(--rad-28); margin-bottom: 16px; }
