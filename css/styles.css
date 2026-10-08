@@ -435,3 +435,4 @@ button, input { font: inherit; color: inherit; }
 /* Слот под картинку: правый нижний угол, в край. Файлы: img/outcome-<животное>-<исход>.png, ключ задаётся в js/data.js (pic) */
 .card__pic { position: absolute; right: 0; bottom: 0; width: 112px; height: 112px; background: center bottom / contain no-repeat; }
 .card__pic { width: 96px; height: 96px; }
+.card__pic { width: 150px; height: 110px; background-position: right bottom; }
