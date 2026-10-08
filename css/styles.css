@@ -114,7 +114,7 @@ button, input { font: inherit; color: inherit; }
 .dots i { width: 6px; height: 6px; border-radius: 100px; background: var(--line); transition: all .2s ease; }
 .dots i.is-on { width: 16px; height: 5px; background: var(--ink); }
 
-.banners { display: flex; flex-direction: column; gap: 6px; margin-top: 24px; }
+.banners { display: flex; flex-direction: column; gap: 6px; margin: 24px calc(10px - var(--gutter)) 0; } /* 10px от краёв экрана */
 .banner { background: var(--bg-default); color: var(--text); border-radius: var(--rad-28); padding: 20px 24px 28px; }
 
 .ways { display: flex; flex-direction: column; gap: 40px; margin-top: 24px; }
@@ -304,7 +304,7 @@ button, input { font: inherit; color: inherit; }
 .logos__x { font-size: 22px; }
 
 /* Закреплённый футер с кнопкой */
-.sticky-cta { padding: 10px var(--gutter) calc(16px + env(safe-area-inset-bottom)); background: #fff; border-radius: var(--rad-32) var(--rad-32) 0 0;
+.sticky-cta { padding: 10px 10px calc(16px + env(safe-area-inset-bottom)); background: #fff; border-radius: var(--rad-32) var(--rad-32) 0 0;
   box-shadow: 0 -1px 3px rgba(0,0,0,.04), 0 -8px 32px rgba(0,0,0,.10); }
 .sticky-cta .btn { box-shadow: none; }
 .sticky-cta { border-radius: var(--rad-28) var(--rad-28) 0 0; }
@@ -331,6 +331,7 @@ button, input { font: inherit; color: inherit; }
 .line__img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; }
 .line__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; padding: 20px 24px 34px; }
 .line__body .t-body { margin-top: 4px; }
+.line__body .t-body a { color: inherit; text-decoration: none; } /* браузер сам превращает номер в ссылку — без подчёркивания */
 .line__actions { display: flex; gap: 6px; margin-top: auto; padding-top: 14px; }
 .line__actions .btn { width: auto; padding: 14px 20px; white-space: nowrap; }
 .hint { margin-top: 10px; }

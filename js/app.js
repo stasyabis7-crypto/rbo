@@ -14,10 +14,13 @@
   let pending = null, focusInput = false; // старт сценария с лендинга
 
   /* ---------- Роутинг ---------- */
+  let current = null, landingY = 0; // место лендинга, с которого ушли в помощника
   function route() {
     const h = location.hash.replace('#', '');
     let name = h === 'chat' ? 'chat' : h === 'result' ? 'result' : 'landing';
     if (name === 'result' && !S.scenario) { location.replace('#chat'); return; }
+    if (current === 'landing' && name !== 'landing') landingY = window.scrollY;
+    current = name;
     Object.entries(screens).forEach(([k, el]) => { el.hidden = k !== name; });
     $('#contact-sheet').hidden = true;
     if (name === 'chat') {
@@ -27,7 +30,7 @@
       scrollChat();
     }
     if (name === 'result') { renderResult(); window.scrollTo(0, 0); }
-    if (name === 'landing' && !h) window.scrollTo(0, 0);
+    if (name === 'landing' && !h) window.scrollTo({ top: landingY, behavior: 'instant' });
   }
   window.addEventListener('hashchange', route);
 
