@@ -390,3 +390,8 @@ button, input { font: inherit; color: inherit; }
 /* Шторка и тост: центрируем без transform, иначе анимация появления сбивает позицию вправо */
 .sheet__panel { left: 0; right: 0; margin: 0 auto; transform: none; }
 .toast { left: 16px; right: 16px; margin: 0 auto; width: fit-content; transform: none; }
+
+/* Чат: абзацы в сообщении помощника, быстрые ответы серыми без обводки */
+.msg--bot p + p { margin-top: 8px; }
+.chip, .chip--soft { border: 0; background: var(--bg-default); padding: 10px 16px; }
+.chip:active { background: #e6e5e3; }
