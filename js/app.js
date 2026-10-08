@@ -353,19 +353,16 @@
       if (r.backup) parts.push(`<section><h3 class="sec__title">Если не ответят</h3>
         ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger, label: 'Запасной контакт' })}</section>`);
       if (r.reportDead) parts.push('<button class="btn btn--secondary" type="button" data-stub="сообщение о неотвечающем контакте уйдёт в РБО">Сообщить, что контакты не отвечают</button>');
-    } else {
-      parts.push('<button class="btn btn--secondary" type="button" data-act="show-contact">Всё равно хочу посоветоваться со специалистом</button>');
     }
 
     parts.push(feedbackHtml(r));
-    parts.push(`<p class="result__foot">Помощник даёт первые шаги по инструкциям РБО и не заменяет специалиста. Решение о лечении и дальнейших действиях принимает он.</p>
-      <button class="btn btn--ghost" type="button" data-act="restart">Спросить о другом животном</button>`);
+    parts.push(`<p class="result__foot">Помощник даёт первые шаги по инструкциям РБО и не заменяет специалиста. Решение о лечении и дальнейших действиях принимает он.</p>`);
 
     $('#result-body').innerHTML = parts.join('');
     typograph($('#result-body'));
   }
 
-  $('#result-body').addEventListener('click', (e) => {
+  screens.result.addEventListener('click', (e) => {
     const act = e.target.closest('[data-act]')?.dataset.act;
     if (!act) return;
     if (act === 'show-contact') { S.showContact = true; renderResult(); $('#contact').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }

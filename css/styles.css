@@ -421,3 +421,8 @@ button, input { font: inherit; color: inherit; }
 .steps { gap: 20px; }
 .steps li { font: 700 21px/26px var(--font); }
 .steps small { margin-top: 4px; font: 400 15px/22px var(--font); color: var(--text); }
+
+/* Экран результата: закреплённый футер с двумя кнопками */
+.sticky-cta--stack { display: flex; flex-direction: column; gap: 6px; }
+.result { padding-bottom: 190px; }
+#contact { scroll-margin-top: 80px; }
