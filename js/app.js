@@ -70,12 +70,16 @@
   /* ---------- Лендинг: липкая кнопка и точки карусели ---------- */
   const sticky = $('#sticky-cta');
   new IntersectionObserver(([en]) => { sticky.hidden = en.isIntersecting; }, { threshold: 0.15 }).observe($('.hero'));
-  const carousel = $('#projects'), dots = $$('#projects-dots i');
-  carousel.addEventListener('scroll', () => {
-    const step = carousel.firstElementChild.offsetWidth + 6;
-    const i = Math.min(dots.length - 1, Math.round(carousel.scrollLeft / step));
-    dots.forEach((d, n) => d.classList.toggle('is-on', n === i));
-  }, { passive: true });
+  function bindDots(track, dots, gap) {
+    track.addEventListener('scroll', () => {
+      const step = track.firstElementChild.offsetWidth + gap;
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      const i = atEnd ? dots.length - 1 : Math.min(dots.length - 1, Math.round(track.scrollLeft / step));
+      dots.forEach((d, n) => d.classList.toggle('is-on', n === i));
+    }, { passive: true });
+  }
+  bindDots($('#projects'), $$('#projects-dots i'), 6);
+  bindDots($('#lines'), $$('#lines-dots i'), 10);
 
   /* ---------- Чат: вывод ---------- */
   function scrollChat() { const c = $('#chat-scroll'); requestAnimationFrame(() => { c.scrollTop = c.scrollHeight; }); }
