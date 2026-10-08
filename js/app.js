@@ -315,10 +315,7 @@
         <p class="t-body">${S.feedback === 'useful' ? 'Рады, что помогли разобраться.' : 'Жаль. Специалист подскажет точнее — контакт ниже.'}</p>
         ${S.feedback === 'useful' ? '<a class="btn btn--overlay" href="#help-ways">Поддержать РБО</a>' : ''}</div>`;
     }
-    if (!contactShown) {
-      return `<div class="feedback"><h3 class="t-h3">Вы можете обратиться в центр и задать вопросы</h3><img class="feedback__pic" src="img/feedback.png" alt="">
-        <button class="btn btn--dark" type="button" data-act="show-contact">Связаться со специалистом</button></div>`;
-    }
+    if (!contactShown) return ''; // пока контакт не показан, баннера нет
     return `<div class="feedback"><h3 class="t-h3">Получилось связаться?</h3><img class="feedback__pic" src="img/feedback.png" alt="">
       <div class="feedback__row">
         <button class="btn btn--s btn--dark" type="button" data-act="fb-yes">Да</button>
