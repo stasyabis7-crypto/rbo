@@ -362,6 +362,7 @@
       <button class="btn btn--ghost" type="button" data-act="restart">Спросить о другом животном</button>`);
 
     $('#result-body').innerHTML = parts.join('');
+    typograph($('#result-body'));
   }
 
   $('#result-body').addEventListener('click', (e) => {
