@@ -204,7 +204,7 @@
     if (!(await bot('Спасибо, этого достаточно. Собрал, что делать.'))) return;
     // Единый паттерн баннера исхода: заголовок, пояснение, кнопка по ширине текста, картинка в правом нижнем углу
     await bot(`<h3 class="t-h3">${esc(r.badge)}</h3><p class="t-body">${esc(r.title)}</p>
-      <a class="btn btn--dark" href="#result">Открыть рекомендации</a>
+      <a class="btn btn--dark" href="#result">Рекомендации</a>
       <span class="card__pic" style="background-image:url('img/outcome-${r.pic}.png')" aria-hidden="true"></span>`, 'card card--summary', 300);
     setChips([{ label: 'Начать заново' }], () => { resetChat(); greet(); }, true);
     S.busy = false;
@@ -217,7 +217,7 @@
     input.value = '';
     if (!S.started) { start(text); return; }
     const q = S.current;
-    if (!q) { addUser(text); bot('В прототипе диалог на этом закончен. Откройте рекомендации или начните заново.'); return; }
+    if (!q) { addUser(text); bot('В прототипе диалог на этом закончен. Откройте «Рекомендации» или начните заново.'); return; }
     const opt = matchOption(q, text) || (q.id === 'region' ? REGIONS[2] : null);
     if (opt) { answer(q, opt, text); return; }
     addUser(text);
