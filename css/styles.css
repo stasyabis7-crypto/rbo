@@ -356,3 +356,9 @@ button, input { font: inherit; color: inherit; }
 .more__title { gap: 2px; }
 .more__title svg { transform: translateY(2px); } /* центр стрелки — по середине строчных букв */
 .more__mail { display: block; }
+
+/* Баннер на тёмной фотографии: белый текст и белые надписи логотипов */
+.hero { color: #fff; background-color: #1c2a22; }
+.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.25) 0, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 45%, rgba(0,0,0,.6) 100%); pointer-events: none; }
+.logos__x { color: #fff; }
+.logos__rbo { filter: brightness(0) invert(1); }
