@@ -451,3 +451,14 @@ button, input { font: inherit; color: inherit; }
 .sheet__close { float: none; margin: -8px -4px -28px auto; }
 .result--sheet #contact .sec__title { padding-right: 44px; }
 .result--sheet .contact__name, .result--sheet .contact--backup .contact__name { font: 700 21px/26px var(--font); } /* в шторке: блоки H2, остальные заголовки H3 */
+
+/* ---------- Шторка контактов v2: закреплённая шапка, контакты без карточек ---------- */
+.sheet__panel--contact { padding-top: 0; }
+.sheet__head { position: sticky; top: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 0 calc(-1 * var(--gutter)); padding: 20px var(--gutter) 12px; background: #fff; border-radius: 28px 28px 0 0; }
+.sheet__close { position: static; float: none; flex: none; width: 40px; height: 40px; margin: 0 -8px 0 0; background: none; }
+.result--sheet { padding-top: 4px; }
+.result--sheet #contact .sec__title { padding-right: 0; }
+.result--sheet .contact, .result--sheet .contact--backup { padding: 0; border: 0; border-radius: 0; gap: 14px; }
+.t-h4 { font: 700 18px/22px var(--font); }
+.contact__send .t-body { margin-top: 4px; }

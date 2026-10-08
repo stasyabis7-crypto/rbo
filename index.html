@@ -265,9 +265,12 @@
     <div class="sheet" id="contact-sheet" hidden>
       <div class="sheet__backdrop" data-close-contact></div>
       <div class="sheet__panel sheet__panel--contact" role="dialog" aria-label="Контакты специалистов">
-        <button class="sheet__close" type="button" data-close-contact aria-label="Закрыть">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
+        <header class="sheet__head">
+          <h2 class="t-h2" id="contact-title">Кто поможет рядом</h2>
+          <button class="sheet__close" type="button" data-close-contact aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </header>
         <div class="result result--sheet" id="contact-body"></div>
       </div>
     </div>

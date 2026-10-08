@@ -273,16 +273,13 @@
     return r;
   }
 
-  function contactCard(c, { backup = false, forceMessenger = false, label = '' } = {}) {
+  function contactCard(c, { backup = false, forceMessenger = false } = {}) {
     const pref = forceMessenger ? 'messenger' : c.preferred;
     const btnM = `<button class="btn ${pref === 'messenger' ? 'btn--primary' : 'btn--secondary'}" type="button">Написать в ${esc(c.messenger)}</button>`;
     const btnP = `<button class="btn ${pref === 'phone' ? 'btn--primary' : 'btn--secondary'}" type="button">Позвонить ${esc(c.phone)}</button>`;
-    const stub = c.stub ? '<span class="tag tag--stub">заглушка: контакт уточнить у РБО</span>'
-      : c.stubFields ? `<span class="tag tag--stub">заглушка: ${esc(c.stubFields)}</span>` : '';
     return `
-      <div class="contact ${backup ? 'contact--backup' : ''}">
+      <div class="contact">
         <div class="contact__head">
-          ${label ? `<span class="t-caption">${esc(label)}</span>` : ''}
           <div class="contact__name">${esc(c.name)}</div>
           <span class="tag tag--pref">Лучше ${pref === 'messenger' ? 'написать в мессенджер' : 'позвонить'}</span>
         </div>
@@ -292,10 +289,9 @@
           ${backup ? '' : `<dt>Телефон</dt><dd>${esc(c.phone)}</dd><dt>Мессенджер</dt><dd>${esc(c.messenger)}</dd>`}
           ${c.email ? `<dt>Почта</dt><dd>${esc(c.email)}</dd>` : ''}
         </dl>
-        ${backup ? '' : `<div class="contact__hint"><b>Что отправить:</b> ${SEND_HINT.map(esc).join('; ')}.</div>`}
+        ${backup ? '' : `<div class="contact__send"><h4 class="t-h4">Что отправить</h4><p class="t-body">${SEND_HINT.map(esc).join('; ')}</p></div>`}
         <div class="contact__actions">${pref === 'messenger' ? btnM + btnP : btnP + btnM}</div>
         <div class="contact__late">Могут ответить не сразу: специалисты часто заняты с животными.</div>
-        ${stub}
       </div>`;
   }
 
@@ -349,10 +345,10 @@
 
     // Контакты и обратная связь живут в шторке, которая открывается кнопкой «Посоветоваться со специалистом»
     const sheet = [];
-    sheet.push(`<section id="contact"><h2 class="sec__title sec__title--h2">${S.region === 'other' || S.tries >= 2 ? 'Кто проконсультирует' : 'Кто поможет рядом'}</h2>
-      ${contactCard(r.contact, { forceMessenger: r.forceMessenger })}</section>`);
+    $('#contact-title').textContent = S.region === 'other' || S.tries >= 2 ? 'Кто проконсультирует' : 'Кто поможет рядом';
+    sheet.push(`<section id="contact">${contactCard(r.contact, { forceMessenger: r.forceMessenger })}</section>`);
     if (r.backup) sheet.push(`<section><h2 class="sec__title sec__title--h2">Если не ответят</h2>
-      ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger, label: 'Запасной контакт' })}</section>`);
+      ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger })}</section>`);
     if (r.reportDead) sheet.push('<button class="btn btn--secondary" type="button">Сообщить, что контакты не отвечают</button>');
     sheet.push(feedbackHtml({ ...r, contactHidden: false }));
     $('#contact-body').innerHTML = sheet.join('');
