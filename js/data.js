@@ -1,7 +1,7 @@
 /*
  * Сценарии и контакты прототипа (Wizard of Oz): все ответы помощника прописаны заранее.
  * ВАЖНО: формулировки советов — черновик, сверить с инструкциями РБО.
- * Все телефоны — случайные, с несуществующим кодом 000. Контактные данные — заглушки.
+ * Все телефоны — случайные, выдуманные. Контактные данные — заглушки.
  */
 
 const REGIONS = [
@@ -14,31 +14,31 @@ const CONTACTS = {
   msk: {
     bird: {
       name: 'РБО · помощь птицам', animals: 'Дикие птицы: птенцы, слётки, раненые взрослые птицы',
-      preferred: 'messenger', messenger: 'Telegram', phone: '+7 (000) 526-01-81', hours: 'Ежедневно, 9:00–21:00', stubFields: 'мессенджер и часы',
+      preferred: 'messenger', messenger: 'Telegram', phone: '+7 (965) 266-47-37', hours: 'Ежедневно, 9:00–21:00', stubFields: 'мессенджер и часы',
     },
     hoofed: {
       name: 'РБО · копытные и крупные млекопитающие', animals: 'Лоси, олени, косули, кабаны, крупные хищники',
-      preferred: 'phone', messenger: 'Telegram', phone: '+7 (000) 590-83-01', hours: 'Ежедневно, 8:00–22:00', stubFields: 'мессенджер и часы',
+      preferred: 'phone', messenger: 'Telegram', phone: '+7 (926) 288-30-05', hours: 'Ежедневно, 8:00–22:00', stubFields: 'мессенджер и часы',
     },
     small: {
       name: 'РБО · зайцы и мелкие млекопитающие', animals: 'Зайцы, ежи, белки и другие мелкие звери',
-      preferred: 'messenger', messenger: 'Telegram', phone: '+7 (000) 661-31-86', hours: 'Ежедневно, 9:00–21:00', stubFields: 'мессенджер и часы',
+      preferred: 'messenger', messenger: 'Telegram', phone: '+7 (905) 123-30-66', hours: 'Ежедневно, 9:00–21:00', stubFields: 'мессенджер и часы',
     },
     backup: {
       name: 'Реабилитационный центр «Дикий остров»', animals: 'Дикие животные и птицы', preferred: 'messenger',
-      messenger: 'Telegram', phone: '+7 (000) 821-99-35', hours: 'Ежедневно, 10:00–20:00', stub: true,
+      messenger: 'Telegram', phone: '+7 (925) 058-71-50', hours: 'Ежедневно, 10:00–20:00', stub: true,
     },
   },
   kaluga: {
-    bird: { name: 'Орнитологический центр-партнёр', animals: 'Дикие птицы', preferred: 'messenger', messenger: 'Telegram', phone: '+7 (000) 181-90-93', hours: 'Пн–Сб, 10:00–19:00', stub: true },
-    hoofed: { name: 'Специалист по копытным', animals: 'Лоси, олени, косули', preferred: 'phone', messenger: 'Telegram', phone: '+7 (000) 786-57-97', hours: 'Ежедневно, 9:00–20:00', stub: true },
-    small: { name: 'Волонтёр-партнёр РБО', animals: 'Мелкие млекопитающие', preferred: 'messenger', messenger: 'Telegram', phone: '+7 (000) 543-23-19', hours: 'Ежедневно, 10:00–20:00', stub: true },
-    backup: { name: 'РБО · дистанционная консультация', animals: 'Любые дикие животные', preferred: 'messenger', messenger: 'Telegram', phone: '+7 (000) 487-57-49', hours: 'Ежедневно, 9:00–21:00', stub: true },
+    bird: { name: 'Орнитологический центр-партнёр', animals: 'Дикие птицы', preferred: 'messenger', messenger: 'Telegram', phone: '+7 (926) 110-72-85', hours: 'Пн–Сб, 10:00–19:00', stub: true },
+    hoofed: { name: 'Специалист по копытным', animals: 'Лоси, олени, косули', preferred: 'phone', messenger: 'Telegram', phone: '+7 (985) 722-07-31', hours: 'Ежедневно, 9:00–20:00', stub: true },
+    small: { name: 'Волонтёр-партнёр РБО', animals: 'Мелкие млекопитающие', preferred: 'messenger', messenger: 'Telegram', phone: '+7 (926) 391-18-78', hours: 'Ежедневно, 10:00–20:00', stub: true },
+    backup: { name: 'РБО · дистанционная консультация', animals: 'Любые дикие животные', preferred: 'messenger', messenger: 'Telegram', phone: '+7 (905) 352-86-45', hours: 'Ежедневно, 9:00–21:00', stub: true },
   },
   // Нет партнёров в регионе: ближайший центр с дистанционной консультацией
   remote: {
     name: 'РБО · дистанционная консультация', animals: 'Любые дикие животные. Консультируют по фото и видео из любого региона',
-    preferred: 'messenger', messenger: 'Telegram', phone: '+7 (000) 118-62-52', email: 'info-rbo@yandex.ru', hours: 'Ежедневно, 9:00–21:00 по Москве', stub: true,
+    preferred: 'messenger', messenger: 'Telegram', phone: '+7 (903) 865-76-40', email: 'info-rbo@yandex.ru', hours: 'Ежедневно, 9:00–21:00 по Москве', stub: true,
   },
 };
 
