@@ -375,3 +375,4 @@ button, input { font: inherit; color: inherit; }
 .tile { padding: 16px 16px 20px; font: 700 21px/26px var(--font); min-height: 0; }
 .tiles { margin-left: calc(10px - var(--gutter)); margin-right: calc(10px - var(--gutter)); } .tile { border-radius: 20px; }
 .line__actions { align-self: stretch; display: grid; grid-template-columns: 1fr 1fr; } .line__actions .btn { width: 100%; padding: 14px 8px; }
+.tile { gap: 16px; align-items: center; } .tile__text { flex: 1; min-width: 0; overflow-wrap: anywhere; } .tile__arrow { flex: none; }
