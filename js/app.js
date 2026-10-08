@@ -384,7 +384,8 @@
   const sheet = $('#sheet');
   $('#sheet-list').innerHTML = SHORTCUTS.map((s, i) => `<button type="button" data-i="${i}"><b>${esc(s.title)}</b><span>${esc(s.note)}</span></button>`).join('')
     + '<button type="button" data-i="reset"><b>Начать чат заново</b><span>Пройти сценарий через диалог</span></button>';
-  $('#open-sheet').addEventListener('click', () => { sheet.hidden = false; });
+  // Меню прототипа открывается ссылкой с параметром ?menu (кнопки в интерфейсе нет)
+  if (new URLSearchParams(location.search).has('menu')) sheet.hidden = false;
   sheet.addEventListener('click', (e) => {
     if (e.target.closest('[data-close-sheet]')) { closeSheet(sheet); return; }
     const b = e.target.closest('[data-i]');
