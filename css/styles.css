@@ -439,3 +439,4 @@ button, input { font: inherit; color: inherit; }
 .card__pic--contact { background-image: url("../img/outcome-contact.png"); }
 .card__pic--danger { background-image: url("../img/outcome-danger.png"); }
 .card__pic--nocoverage { background-image: url("../img/outcome-nocoverage.png"); }
+.card__pic { width: 96px; height: 96px; }
