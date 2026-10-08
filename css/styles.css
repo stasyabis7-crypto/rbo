@@ -380,3 +380,4 @@ button, input { font: inherit; color: inherit; }
 .more { margin-left: calc(10px - var(--gutter)); margin-right: calc(10px - var(--gutter)); }
 .stat__img { display: block; width: 100%; height: auto; border-radius: var(--rad-28); margin-bottom: 16px; }
 .carousel__img { display: block; width: 100%; height: 226px; object-fit: cover; border-radius: var(--rad-32); margin-bottom: 16px; }
+.carousel { padding: 0 10px; gap: 10px; scroll-padding-left: 10px; } .carousel__item { scroll-margin-left: 0; }

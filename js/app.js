@@ -78,7 +78,7 @@
       dots.forEach((d, n) => d.classList.toggle('is-on', n === i));
     }, { passive: true });
   }
-  bindDots($('#projects'), $$('#projects-dots i'), 6);
+  bindDots($('#projects'), $$('#projects-dots i'), 10);
   bindDots($('#lines'), $$('#lines-dots i'), 10);
 
   /* ---------- Чат: вывод ---------- */
