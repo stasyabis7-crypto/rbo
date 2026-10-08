@@ -337,6 +337,8 @@
     const contactShown = !r.contactHidden || S.showContact;
     const parts = [];
 
+    // Картинка над текстом: img/result-<pic>.png; если файла нет, блок не показывается
+    if (r.pic && S.tries === 0) parts.push(`<img class="result__pic" src="img/result-${r.pic}.png" alt="" onerror="this.remove()">`);
     parts.push(`<div class="outcome"><h2 class="t-h1">${esc(r.title)}</h2><p class="t-body">${esc(r.lead)}</p></div>`);
 
     if (r.emergency) parts.push(`<div class="emergency"><p class="t-dense">${esc(r.emergency.text)}</p>
