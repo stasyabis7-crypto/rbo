@@ -475,3 +475,4 @@ h4 { margin: 0; }
 .sheet__backdrop { animation: fade-in .25s ease both; }
 .sheet.is-closing .sheet__panel { animation: sheet-down .22s ease-in both; }
 .sheet.is-closing .sheet__backdrop { animation: fade-out .22s ease both; }
+.card__pic--moose-watch, .card__pic--predator-danger, .card__pic--moose-danger { width: 210px; height: 160px; } /* крупные животные — картинка больше, может заходить под текст */

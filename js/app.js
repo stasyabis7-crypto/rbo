@@ -212,7 +212,7 @@
     // Единый паттерн баннера исхода: заголовок, пояснение, кнопка по ширине текста, картинка в правом нижнем углу
     await bot(`<h3 class="t-h3">${esc(r.badge)}</h3><p class="t-body">${esc(r.title)}</p>
       <a class="btn btn--dark" href="#result">Рекомендации</a>
-      <span class="card__pic" style="background-image:url('img/outcome-${picKey(r.pic)}.png')" aria-hidden="true"></span>`, 'card card--summary', 300);
+      <span class="card__pic card__pic--${r.pic}" style="background-image:url('img/outcome-${picKey(r.pic)}.png')" aria-hidden="true"></span>`, 'card card--summary', 300);
     setChips([{ label: 'Начать заново' }], () => { resetChat(); greet(); }, true);
     S.busy = false;
   }
