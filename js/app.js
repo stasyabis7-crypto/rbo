@@ -162,7 +162,7 @@
     if (sc.warning) await bot(`<div class="card__title">${esc(sc.warning.title)}</div>${esc(sc.warning.text)}`, 'card card--danger', 400);
     await bot(esc(sc.ack));
     // Правила показываем сразу, не дожидаясь конца диалога
-    await bot(`<div class="card__title">Чего не делать</div>${listHtml(sc.rules)}`, 'card', 350);
+    await bot(`<div class="card__title">Чего не стоит делать</div>${listHtml(sc.rules)}`, 'card', 350);
     S.queue = [Q_REGION, ...sc.questions.filter((q) => !(q.id in S.answers))];
     next();
   }
@@ -347,7 +347,7 @@
     parts.push(`<section><h3 class="sec__title">Что делать сейчас</h3><ol class="steps">${
       r.steps.map((s) => `<li>${esc(s.t)}${s.s ? `<small>${esc(s.s)}</small>` : ''}</li>`).join('')}</ol></section>`);
 
-    parts.push(`<section class="donts"><h3 class="sec__title">Чего не делать</h3>${listHtml(r.donts)}</section>`);
+    parts.push(`<section class="donts"><h3 class="sec__title">Чего не стоит делать</h3>${listHtml(r.donts)}</section>`);
 
     if (contactShown) {
       parts.push(`<section id="contact"><h3 class="sec__title">${S.region === 'other' || S.tries >= 2 ? 'Кто проконсультирует' : 'Кто поможет рядом'}</h3>

@@ -407,3 +407,10 @@ button, input { font: inherit; color: inherit; }
 .card--summary { background: var(--bg-default); border: 0; }
 .card--summary .card__title { font: 700 18px/22px var(--font); margin-bottom: 4px; }
 .card__sub { font: 400 15px/22px var(--font); }
+
+/* «Чего не стоит делать»: иконка Close Outline, снизу отступ больше, чем по бокам */
+.list--no li { padding-left: 30px; }
+.list--no li::before { left: 0; top: 0; width: 20px; height: 20px; border-radius: 0; opacity: 1; background: url("../img/close-outline.svg") center / contain no-repeat;
+  -webkit-mask: none; mask: none; }
+.chat__log .card:not(.card--summary):not(.card--danger) { padding: 16px 16px 24px; }
+.donts { padding: 16px 16px 24px; }
