@@ -379,3 +379,4 @@ button, input { font: inherit; color: inherit; }
 #lines-dots { margin-top: 16px; }
 .more { margin-left: calc(10px - var(--gutter)); margin-right: calc(10px - var(--gutter)); }
 .stat__img { display: block; width: 100%; height: auto; border-radius: var(--rad-28); margin-bottom: 16px; }
+.carousel__img { display: block; width: 100%; height: 226px; object-fit: cover; border-radius: var(--rad-32); margin-bottom: 16px; }
