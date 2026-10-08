@@ -385,3 +385,4 @@ button, input { font: inherit; color: inherit; }
 /* Картинки «Как можно помочь»: на всю ширину, 10px от краёв экрана */
 .way__img { align-self: stretch; width: auto; height: auto; margin: 0 calc(10px - var(--gutter)) 16px; border-radius: 20px; object-fit: cover; }
 @media (min-width: 560px) { .way__img { margin: 0 0 16px; } }
+.screen--landing { padding-bottom: 120px; } /* место под закреплённую кнопку */
