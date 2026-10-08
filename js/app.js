@@ -64,7 +64,7 @@
     if (!tile) return;
     const id = tile.dataset.scn || null;
     resetChat();
-    pending = { scenario: id, text: id ? SCENARIOS[id].example : 'Нашёл дикое животное, не знаю, что делать' };
+    pending = { scenario: id, text: id ? SCENARIOS[id].example : 'Вижу дикое животное и не знаю, что делать' };
     location.hash = '#chat';
   });
 
