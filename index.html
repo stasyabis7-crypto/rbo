@@ -261,6 +261,16 @@
       <button class="btn btn--dark" type="button" data-act="show-contact">Посоветоваться со специалистом</button>
       <button class="btn btn--secondary" type="button" data-act="restart">Спросить о другом животном</button>
     </div>
+    <!-- Шторка с контактами специалистов -->
+    <div class="sheet" id="contact-sheet" hidden>
+      <div class="sheet__backdrop" data-close-contact></div>
+      <div class="sheet__panel sheet__panel--contact" role="dialog" aria-label="Контакты специалистов">
+        <button class="sheet__close" type="button" data-close-contact aria-label="Закрыть">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <div class="result result--sheet" id="contact-body"></div>
+      </div>
+    </div>
   </section>
 
   <!-- Меню прототипа: быстрый переход к сценариям -->

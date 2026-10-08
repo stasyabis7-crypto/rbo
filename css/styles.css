@@ -442,3 +442,11 @@ button, input { font: inherit; color: inherit; }
 /* «Чего не стоит делать» и обратная связь: одинаковые заголовки H3, между соседними баннерами 16px */
 .donts .sec__title { font: 700 21px/26px var(--font); margin-bottom: 12px; }
 .donts + .feedback { margin-top: -8px; }
+
+/* ---------- Шторка с контактами специалистов ---------- */
+.sheet__panel--contact { padding: 24px var(--gutter) calc(24px + env(safe-area-inset-bottom)); max-height: 90dvh; }
+.sheet__close { position: sticky; top: 0; float: right; z-index: 2; width: 36px; height: 36px; margin: -8px -4px 0 8px; display: grid; place-items: center; border: 0; border-radius: 50%;
+  background: var(--bg-default); cursor: pointer; }
+.result--sheet { padding: 0; gap: 24px; }
+.sheet__close { float: none; margin: -8px -4px -28px auto; }
+.result--sheet #contact .sec__title { padding-right: 44px; }

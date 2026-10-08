@@ -19,6 +19,7 @@
     let name = h === 'chat' ? 'chat' : h === 'result' ? 'result' : 'landing';
     if (name === 'result' && !S.scenario) { location.replace('#chat'); return; }
     Object.entries(screens).forEach(([k, el]) => { el.hidden = k !== name; });
+    $('#contact-sheet').hidden = true;
     if (name === 'chat') {
       if (!log.children.length) greet();
       if (pending) { const p = pending; pending = null; start(p.text, p.scenario); }
@@ -328,7 +329,6 @@
     const r = buildResult();
     const sc = SCENARIOS[S.scenario];
     $('#result-context').textContent = [sc.title, S.regionName || (REGIONS.find((x) => x.id === S.region) || {}).label].filter(Boolean).join(' · ');
-    const contactShown = !r.contactHidden || S.showContact;
     const parts = [];
 
     // Картинка над текстом: img/result-<pic>.png; если файла нет, блок не показывается
@@ -345,29 +345,32 @@
 
     parts.push(`<section class="donts"><h3 class="sec__title">Чего не стоит делать</h3>${listHtml(r.donts)}</section>`);
 
-    if (contactShown) {
-      parts.push(`<section id="contact"><h3 class="sec__title">${S.region === 'other' || S.tries >= 2 ? 'Кто проконсультирует' : 'Кто поможет рядом'}</h3>
-        ${contactCard(r.contact, { forceMessenger: r.forceMessenger })}</section>`);
-      if (r.backup) parts.push(`<section><h3 class="sec__title">Если не ответят</h3>
-        ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger, label: 'Запасной контакт' })}</section>`);
-      if (r.reportDead) parts.push('<button class="btn btn--secondary" type="button" data-stub="сообщение о неотвечающем контакте уйдёт в РБО">Сообщить, что контакты не отвечают</button>');
-    }
-
-    parts.push(feedbackHtml(r));
     parts.push(`<p class="result__foot">Помощник даёт первые шаги по инструкциям РБО и не заменяет специалиста. Решение о лечении и дальнейших действиях принимает он.</p>`);
+
+    // Контакты и обратная связь живут в шторке, которая открывается кнопкой «Посоветоваться со специалистом»
+    const sheet = [];
+    sheet.push(`<section id="contact"><h2 class="sec__title sec__title--h2">${S.region === 'other' || S.tries >= 2 ? 'Кто проконсультирует' : 'Кто поможет рядом'}</h2>
+      ${contactCard(r.contact, { forceMessenger: r.forceMessenger })}</section>`);
+    if (r.backup) sheet.push(`<section><h3 class="sec__title">Если не ответят</h3>
+      ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger, label: 'Запасной контакт' })}</section>`);
+    if (r.reportDead) sheet.push('<button class="btn btn--secondary" type="button" data-stub="сообщение о неотвечающем контакте уйдёт в РБО">Сообщить, что контакты не отвечают</button>');
+    sheet.push(feedbackHtml({ ...r, contactHidden: false }));
+    $('#contact-body').innerHTML = sheet.join('');
+    typograph($('#contact-body'));
 
     $('#result-body').innerHTML = parts.join('');
     typograph($('#result-body'));
   }
 
+  const contactSheet = $('#contact-sheet');
   screens.result.addEventListener('click', (e) => {
+    if (e.target.closest('[data-close-contact]')) { contactSheet.hidden = true; return; }
     const act = e.target.closest('[data-act]')?.dataset.act;
     if (!act) return;
-    if (act === 'show-contact') { S.showContact = true; renderResult(); $('#contact').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (act === 'show-contact') { contactSheet.hidden = false; $('.sheet__panel', contactSheet).scrollTop = 0; return; }
     if (act === 'restart') { resetChat(); location.hash = '#chat'; return; }
-    if (act === 'fb-no') { S.tries += 1; S.feedback = null; renderResult(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
-    S.feedback = { 'fb-yes': 'yes', 'fb-later': 'later', 'fb-useful': 'useful', 'fb-useless': 'useless', 'fb-reset': null }[act];
-    if (act === 'fb-useless') S.showContact = true;
+    if (act === 'fb-no') { S.tries += 1; S.feedback = null; renderResult(); $('.sheet__panel', contactSheet).scrollTop = 0; window.scrollTo(0, 0); return; }
+    S.feedback = { 'fb-yes': 'yes', 'fb-later': 'later', 'fb-reset': null }[act];
     renderResult();
   });
 
