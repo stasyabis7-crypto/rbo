@@ -212,7 +212,7 @@
     // Единый паттерн баннера исхода: заголовок, пояснение, кнопка по ширине текста, картинка в правом нижнем углу
     await bot(`<h3 class="t-h3">${esc(r.badge)}</h3><p class="t-body">${esc(r.title)}</p>
       <a class="btn btn--dark" href="#result">Рекомендации</a>
-      <span class="card__pic" style="background-image:url('img/outcome-${r.pic}.png')" aria-hidden="true"></span>`, 'card card--summary', 300);
+      <span class="card__pic" style="background-image:url('img/outcome-${picKey(r.pic)}.png')" aria-hidden="true"></span>`, 'card card--summary', 300);
     setChips([{ label: 'Начать заново' }], () => { resetChat(); greet(); }, true);
     S.busy = false;
   }
@@ -233,6 +233,10 @@
   });
 
   /* ---------- Результат ---------- */
+  // Ситуации, которые используют картинки другой ситуации
+  const PIC_ALIAS = { 'moose-danger': 'bird-contact', 'other-contact': 'bird-contact' };
+  const picKey = (k) => PIC_ALIAS[k] || k;
+
   function buildResult() {
     const sc = SCENARIOS[S.scenario];
     const r = { ...sc.resolve(S.answers) };
@@ -333,7 +337,7 @@
     const parts = [];
 
     // Картинка над текстом: img/result-<pic>.png; если файла нет, блок не показывается
-    if (r.pic && S.tries === 0) parts.push(`<img class="result__pic" src="img/result-${r.pic}.png" alt="" onerror="this.remove()">`);
+    if (r.pic && S.tries === 0) parts.push(`<img class="result__pic" src="img/result-${picKey(r.pic)}.png" alt="" onerror="this.remove()">`);
     parts.push(`<div class="outcome"><h2 class="t-h1">${esc(r.title)}</h2><p class="t-body">${esc(r.lead)}</p></div>`);
 
     if (r.emergency) parts.push(`<div class="emergency"><p class="t-dense">${esc(r.emergency.text)}</p>
