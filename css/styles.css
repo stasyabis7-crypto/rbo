@@ -402,3 +402,8 @@ button, input { font: inherit; color: inherit; }
 .steps li:nth-child(1)::before { background-image: url("../img/rule-1.png"); }
 .steps li:nth-child(2)::before { background-image: url("../img/rule-2.png"); }
 .steps li:nth-child(3)::before { background-image: url("../img/rule-3.png"); }
+
+/* Карточка рекомендаций в чате: серая, без обводки, исход — подзаголовком */
+.card--summary { background: var(--bg-default); border: 0; }
+.card--summary .card__title { font: 700 18px/22px var(--font); margin-bottom: 4px; }
+.card__sub { font: 400 15px/22px var(--font); }

@@ -202,7 +202,7 @@
     S.busy = true;
     const r = buildResult();
     if (!(await bot('Спасибо, этого достаточно. Собрал, что делать.'))) return;
-    await bot(`<span class="tag">${esc(r.badge)}</span><div class="card__title mt-8">${esc(r.title)}</div>
+    await bot(`<div class="card__title">${esc(r.title)}</div><p class="card__sub">${esc(r.badge)}</p>
       <a class="btn btn--dark btn--s" href="#result">Открыть рекомендации</a>`, 'card card--summary', 300);
     setChips([{ label: 'Начать заново' }], () => { resetChat(); greet(); }, true);
     S.busy = false;
