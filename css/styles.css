@@ -415,3 +415,9 @@ button, input { font: inherit; color: inherit; }
 .chat__log .card:not(.card--summary):not(.card--danger) { padding: 16px 16px 24px; }
 .donts { padding: 16px 16px 24px; }
 .outcome { padding: 0; border-radius: 0; background: none; } /* исход: просто заголовок и подзаголовок */
+
+/* Шаги: заголовок блока H2, заголовки пунктов H3, пояснения обычным чёрным текстом */
+.sec__title--h2 { font: 700 26px/30px var(--font); margin-bottom: 16px; }
+.steps { gap: 20px; }
+.steps li { font: 700 21px/26px var(--font); }
+.steps small { margin-top: 4px; font: 400 15px/22px var(--font); color: var(--text); }

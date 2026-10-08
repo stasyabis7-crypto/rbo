@@ -342,7 +342,7 @@
 
     if (r.notice) parts.push(`<div class="notice">${esc(r.notice)}</div>`);
 
-    parts.push(`<section><h3 class="sec__title">Что делать сейчас</h3><ol class="steps">${
+    parts.push(`<section><h2 class="sec__title sec__title--h2">Что делать сейчас</h2><ol class="steps">${
       r.steps.map((s) => `<li>${esc(s.t)}${s.s ? `<small>${esc(s.s)}</small>` : ''}</li>`).join('')}</ol></section>`);
 
     parts.push(`<section class="donts"><h3 class="sec__title">Чего не стоит делать</h3>${listHtml(r.donts)}</section>`);
