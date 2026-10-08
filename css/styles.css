@@ -432,11 +432,6 @@ button, input { font: inherit; color: inherit; }
 .card--summary .t-h3, .card--summary .t-body { position: relative; z-index: 1; max-width: 74%; }
 .card--summary .t-body { margin-top: 4px; }
 .card--summary .btn { position: relative; z-index: 1; width: auto; margin-top: 14px; padding: 14px 20px; }
-/* Слот под картинку: правый нижний угол, в край. Файлы: img/outcome-<вариант>.png */
+/* Слот под картинку: правый нижний угол, в край. Файлы: img/outcome-<животное>-<исход>.png, ключ задаётся в js/data.js (pic) */
 .card__pic { position: absolute; right: 0; bottom: 0; width: 112px; height: 112px; background: center bottom / contain no-repeat; }
-.card__pic--ok { background-image: url("../img/outcome-ok.png"); }
-.card__pic--watch { background-image: url("../img/outcome-watch.png"); }
-.card__pic--contact { background-image: url("../img/outcome-contact.png"); }
-.card__pic--danger { background-image: url("../img/outcome-danger.png"); }
-.card__pic--nocoverage { background-image: url("../img/outcome-nocoverage.png"); }
 .card__pic { width: 96px; height: 96px; }
