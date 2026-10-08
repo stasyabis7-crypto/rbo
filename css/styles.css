@@ -364,3 +364,4 @@ button, input { font: inherit; color: inherit; }
 .logos__rbo { filter: brightness(0) invert(1); }
 /* Белый логотип РБО со слоганом: файл обрезан по краям знака, фильтр и компенсация полей не нужны */
 .logos__rbo { height: 46px; margin: 0 0 0 14px; filter: none; }
+.hero::before { content: none; }
