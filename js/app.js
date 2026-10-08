@@ -349,7 +349,6 @@
     if (r.backup) sheet.push(`<section><h2 class="sec__title sec__title--h2">Если не ответят</h2>
       ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger })}</section>`);
     if (r.reportDead) sheet.push('<button class="btn btn--secondary" type="button">Сообщить, что контакты не отвечают</button>');
-    sheet.push(feedbackHtml({ ...r, contactHidden: false }));
     $('#contact-body').innerHTML = sheet.join('');
     typograph($('#contact-body'));
 
