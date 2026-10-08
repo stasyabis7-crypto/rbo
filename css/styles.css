@@ -477,3 +477,4 @@ h4 { margin: 0; }
 .sheet.is-closing .sheet__backdrop { animation: fade-out .22s ease both; }
 .card__pic--moose-watch, .card__pic--predator-danger, .card__pic--moose-danger { width: 210px; height: 160px; } /* крупные животные — картинка больше, может заходить под текст */
 .chat__log .card .card__title, .chat__log .card--danger .card__title { font: 700 21px/26px var(--font); margin-bottom: 8px; } /* все заголовки баннеров в чате — H3 */
+.msg--bot h1 { margin-bottom: 8px; }
