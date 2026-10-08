@@ -275,8 +275,8 @@
 
   function contactCard(c, { backup = false, forceMessenger = false, label = '' } = {}) {
     const pref = forceMessenger ? 'messenger' : c.preferred;
-    const btnM = `<button class="btn ${pref === 'messenger' ? 'btn--primary' : 'btn--secondary'}" type="button" data-stub="откроется ${esc(c.messenger)} центра с готовым текстом сообщения">Написать в ${esc(c.messenger)}</button>`;
-    const btnP = `<button class="btn ${pref === 'phone' ? 'btn--primary' : 'btn--secondary'}" type="button" data-stub="звонок на ${esc(c.phone)}">Позвонить ${esc(c.phone)}</button>`;
+    const btnM = `<button class="btn ${pref === 'messenger' ? 'btn--primary' : 'btn--secondary'}" type="button">Написать в ${esc(c.messenger)}</button>`;
+    const btnP = `<button class="btn ${pref === 'phone' ? 'btn--primary' : 'btn--secondary'}" type="button">Позвонить ${esc(c.phone)}</button>`;
     const stub = c.stub ? '<span class="tag tag--stub">заглушка: контакт уточнить у РБО</span>'
       : c.stubFields ? `<span class="tag tag--stub">заглушка: ${esc(c.stubFields)}</span>` : '';
     return `
@@ -336,7 +336,7 @@
     parts.push(`<div class="outcome"><h2 class="t-h1">${esc(r.title)}</h2><p class="t-body">${esc(r.lead)}</p></div>`);
 
     if (r.emergency) parts.push(`<div class="emergency"><p class="t-dense">${esc(r.emergency.text)}</p>
-      <button class="btn btn--dark" type="button" data-stub="звонок на 112">${esc(r.emergency.label)}</button></div>`);
+      <button class="btn btn--dark" type="button">${esc(r.emergency.label)}</button></div>`);
 
     if (r.notice) parts.push(`<div class="notice">${esc(r.notice)}</div>`);
 
@@ -353,7 +353,7 @@
       ${contactCard(r.contact, { forceMessenger: r.forceMessenger })}</section>`);
     if (r.backup) sheet.push(`<section><h2 class="sec__title sec__title--h2">Если не ответят</h2>
       ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger, label: 'Запасной контакт' })}</section>`);
-    if (r.reportDead) sheet.push('<button class="btn btn--secondary" type="button" data-stub="сообщение о неотвечающем контакте уйдёт в РБО">Сообщить, что контакты не отвечают</button>');
+    if (r.reportDead) sheet.push('<button class="btn btn--secondary" type="button">Сообщить, что контакты не отвечают</button>');
     sheet.push(feedbackHtml({ ...r, contactHidden: false }));
     $('#contact-body').innerHTML = sheet.join('');
     typograph($('#contact-body'));
