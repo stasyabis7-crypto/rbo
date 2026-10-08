@@ -206,8 +206,6 @@
       <a class="btn btn--dark btn--s" href="#result">Открыть рекомендации</a>`, 'card card--summary', 300);
     setChips([{ label: 'Начать заново' }], () => { resetChat(); greet(); }, true);
     S.busy = false;
-    await sleep(500);
-    if (location.hash === '#chat') location.hash = '#result';
   }
 
   $('#chat-form').addEventListener('submit', (e) => {
