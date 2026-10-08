@@ -479,3 +479,4 @@ h4 { margin: 0; }
 .chat__log .card .card__title, .chat__log .card--danger .card__title { font: 700 21px/26px var(--font); margin-bottom: 8px; } /* все заголовки баннеров в чате — H3 */
 .msg--bot h1 { margin-bottom: 8px; }
 .card__pic--fledgling-unsure { width: 160px; height: 176px; } /* девушка с телефоном — крупнее */
+.card__pic--predator-danger { width: 180px; height: 136px; } /* медведь чуть меньше оленя */
