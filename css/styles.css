@@ -464,3 +464,4 @@ button, input { font: inherit; color: inherit; }
 .contact__send .t-body { margin-top: 4px; }
 .result--sheet .contact { gap: 16px; } /* в т.ч. 16px перед кнопками */
 h4 { margin: 0; }
+.result--sheet .btn--primary, .result--sheet .btn--primary:active { background: var(--ink); color: #fff; } /* в шторке основная кнопка чёрная */
