@@ -31,6 +31,12 @@
   }
   window.addEventListener('hashchange', route);
 
+  // Шторка уезжает вниз, затем скрывается
+  function closeSheet(el) {
+    el.classList.add('is-closing');
+    setTimeout(() => { el.hidden = true; el.classList.remove('is-closing'); }, 220);
+  }
+
   /* ---------- Тост и заглушки ---------- */
   let toastTimer;
   function toast(text) {
@@ -358,7 +364,7 @@
 
   const contactSheet = $('#contact-sheet');
   screens.result.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close-contact]')) { contactSheet.hidden = true; return; }
+    if (e.target.closest('[data-close-contact]')) { closeSheet(contactSheet); return; }
     const act = e.target.closest('[data-act]')?.dataset.act;
     if (!act) return;
     if (act === 'show-contact') { contactSheet.hidden = false; $('.sheet__panel', contactSheet).scrollTop = 0; return; }
@@ -374,7 +380,7 @@
     + '<button type="button" data-i="reset"><b>Начать чат заново</b><span>Пройти сценарий через диалог</span></button>';
   $('#open-sheet').addEventListener('click', () => { sheet.hidden = false; });
   sheet.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close-sheet]')) { sheet.hidden = true; return; }
+    if (e.target.closest('[data-close-sheet]')) { closeSheet(sheet); return; }
     const b = e.target.closest('[data-i]');
     if (!b) return;
     sheet.hidden = true;
