@@ -100,7 +100,11 @@ const SCENARIOS = {
           contactHidden: true,
         };
       }
-      if (a.hurt === 'yes') return SCENARIOS.injuredBird.resolve({ blood: 'yes', move: 'yes' });
+      if (a.hurt === 'yes') {
+        // Птенец с повреждениями: советы как для раненой птицы, картинка — по тому, какой птенец
+        const r = SCENARIOS.injuredBird.resolve({ blood: 'yes', move: 'yes' });
+        return { ...r, title: 'Птенцу нужен орнитолог', pic: a.feathers === 'no' ? 'nestling-contact' : a.feathers === 'yes' ? 'fledgling-ok' : 'bird-contact' };
+      }
       return {
         pic: a.feathers === 'no' ? 'nestling-contact' : 'fledgling-unsure', tone: 'contact', badge: 'Свяжитесь со специалистом',
         title: a.feathers === 'no' ? 'Птенцу без перьев нужна консультация' : 'Лучше показать птенца специалисту',
