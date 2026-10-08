@@ -437,3 +437,5 @@ button, input { font: inherit; color: inherit; }
 .card__pic { width: 96px; height: 96px; }
 .card__pic { width: 150px; height: 110px; background-position: right bottom; }
 .result__pic { display: block; width: auto; margin: -4px calc(10px - var(--gutter)) 0; border-radius: 20px; } /* картинка над заголовком результата, 10px от краёв экрана */
+.feedback__pic { display: block; width: 100%; height: auto; border-radius: 16px; }
+.feedback__row .btn.btn--dark { background: var(--ink); color: #fff; }
