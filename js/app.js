@@ -335,9 +335,7 @@
     const contactShown = !r.contactHidden || S.showContact;
     const parts = [];
 
-    parts.push(`<div class="outcome outcome--${r.tone}">
-      <span class="outcome__badge">${esc(r.badge)}</span>
-      <h2 class="t-h2">${esc(r.title)}</h2><p class="t-body">${esc(r.lead)}</p></div>`);
+    parts.push(`<div class="outcome"><h2 class="t-h1">${esc(r.title)}</h2><p class="t-body">${esc(r.lead)}</p></div>`);
 
     if (r.emergency) parts.push(`<div class="emergency"><p class="t-dense">${esc(r.emergency.text)}</p>
       <button class="btn btn--dark" type="button" data-stub="звонок на 112">${esc(r.emergency.label)}</button></div>`);

@@ -414,3 +414,4 @@ button, input { font: inherit; color: inherit; }
   -webkit-mask: none; mask: none; }
 .chat__log .card:not(.card--summary):not(.card--danger) { padding: 16px 16px 24px; }
 .donts { padding: 16px 16px 24px; }
+.outcome { padding: 0; border-radius: 0; background: none; } /* исход: просто заголовок и подзаголовок */
