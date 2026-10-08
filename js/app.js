@@ -351,7 +351,7 @@
     const sheet = [];
     sheet.push(`<section id="contact"><h2 class="sec__title sec__title--h2">${S.region === 'other' || S.tries >= 2 ? 'Кто проконсультирует' : 'Кто поможет рядом'}</h2>
       ${contactCard(r.contact, { forceMessenger: r.forceMessenger })}</section>`);
-    if (r.backup) sheet.push(`<section><h3 class="sec__title">Если не ответят</h3>
+    if (r.backup) sheet.push(`<section><h2 class="sec__title sec__title--h2">Если не ответят</h2>
       ${contactCard(r.backup, { backup: !r.backupFull, forceMessenger: r.forceMessenger, label: 'Запасной контакт' })}</section>`);
     if (r.reportDead) sheet.push('<button class="btn btn--secondary" type="button" data-stub="сообщение о неотвечающем контакте уйдёт в РБО">Сообщить, что контакты не отвечают</button>');
     sheet.push(feedbackHtml({ ...r, contactHidden: false }));

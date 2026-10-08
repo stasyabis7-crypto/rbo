@@ -450,3 +450,4 @@ button, input { font: inherit; color: inherit; }
 .result--sheet { padding: 0; gap: 24px; }
 .sheet__close { float: none; margin: -8px -4px -28px auto; }
 .result--sheet #contact .sec__title { padding-right: 44px; }
+.result--sheet .contact__name, .result--sheet .contact--backup .contact__name { font: 700 21px/26px var(--font); } /* в шторке: блоки H2, остальные заголовки H3 */
