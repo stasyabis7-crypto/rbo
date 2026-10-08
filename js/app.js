@@ -298,7 +298,7 @@
           <dt>Кому помогают</dt><dd>${esc(c.animals)}</dd>
           <dt>Часы работы</dt><dd>${esc(c.hours)}</dd>
           ${backup ? '' : `<dt>Телефон</dt><dd>${esc(c.phone)}</dd><dt>Мессенджер</dt><dd>${esc(c.messenger)}</dd>`}
-          ${c.email ? `<dt>Почта</dt><dd>${esc(c.email)}</dd>` : ''}
+          ${c.email ? `<dt>Почта</dt><dd><u class="mail">${esc(c.email)}</u></dd>` : ''}
         </dl>
         ${backup ? '' : `<div class="contact__send"><h4 class="t-h4">Что отправить</h4><p class="t-body">${SEND_HINT.map(esc).join('; ')}</p></div>`}
         <div class="contact__actions">${pref === 'messenger' ? btnM + btnP : btnP + btnM}</div>
