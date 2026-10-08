@@ -3,3 +3,4 @@ fonts/*.otf
 fonts/*.ttf
 fonts/*.woff*
 media/
+dist/

@@ -283,7 +283,7 @@ button, input { font: inherit; color: inherit; }
 .hero__media span { display: none; }
 
 /* ---------- Первый баннер v3: фон-картинка, чёрный текст, кнопка у низа ---------- */
-.hero { height: 700px; min-height: 0; color: var(--text); background: #d3ecff url("../img/hero.png") center / cover no-repeat; }
+.hero { height: 600px; min-height: 0; color: var(--text); background: #d3ecff url("../img/hero.png") center / cover no-repeat; }
 .hero__header { padding: 12px var(--gutter) 8px; }
 .logos { gap: 6px; }
 .logos__avito { height: 40px; width: auto; display: block; }
