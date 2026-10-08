@@ -462,3 +462,4 @@ button, input { font: inherit; color: inherit; }
 .result--sheet .contact, .result--sheet .contact--backup { padding: 0; border: 0; border-radius: 0; gap: 14px; }
 .t-h4 { font: 700 18px/22px var(--font); }
 .contact__send .t-body { margin-top: 4px; }
+.result--sheet .contact { gap: 16px; } /* в т.ч. 16px перед кнопками */

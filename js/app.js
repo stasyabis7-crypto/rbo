@@ -281,7 +281,6 @@
       <div class="contact">
         <div class="contact__head">
           <div class="contact__name">${esc(c.name)}</div>
-          <span class="tag tag--pref">Лучше ${pref === 'messenger' ? 'написать в мессенджер' : 'позвонить'}</span>
         </div>
         <dl class="kv">
           <dt>Кому помогают</dt><dd>${esc(c.animals)}</dd>
