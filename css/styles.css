@@ -323,7 +323,7 @@ button, input { font: inherit; color: inherit; }
 .alert__img { position: absolute; right: 0; bottom: 0; width: 120px; height: auto; }
 
 /* ---------- Контакты v2: серые баннеры с картинкой сверху, друг под другом ---------- */
-.lines { display: flex; flex-direction: column; gap: 6px; margin: 24px calc(10px - var(--gutter)) 0; } /* 10px от краёв экрана */
+.lines { display: flex; flex-direction: column; gap: 10px; margin: 24px calc(10px - var(--gutter)) 0; } /* 10px от краёв экрана */
 .line { display: flex; flex-direction: column; gap: 0; padding: 0; border: 0; border-radius: 20px;
   background: var(--bg-default); overflow: hidden; }
 .line__img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px; }
