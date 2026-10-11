@@ -89,7 +89,6 @@
     }, { passive: true });
   }
   bindDots($('#projects'), $$('#projects-dots i'), 10);
-  bindDots($('#lines'), $$('#lines-dots i'), 10);
 
   /* ---------- Чат: вывод ---------- */
   function scrollChat() { const c = $('#chat-scroll'); requestAnimationFrame(() => { c.scrollTop = c.scrollHeight; }); }
